@@ -30,17 +30,17 @@ int main() {
     printf("------------------------\n");
 
     for (i = 0; i < 5; i++) {
-        printf("\nTerritório %d\n", i + 1);
+        printf("\nTerritorio %d\n", i + 1);
         printf("------------\n");
 
         /* Leitura do nome: permitir espaços no nome */
-        printf("Digite o NOME do território (max 29 caracteres): ");
+        printf("Digite o NOME do territorio (max 29 caracteres): ");
         /* O espaço antes do %29[^\n] faz o scanf ignorar espaços e quebras anteriores */
         scanf(" %29[^\n]", territorios[i].nome);
         limpar_buffer(); /* remove a quebra de linha pendente (se houver) */
 
         /* Leitura da cor do exército: uma palavra (sem espaços) */
-        printf("Digite a COR do exército dominante (ex: vermelho): ");
+        printf("Digite a COR do exercito dominante (ex: vermelho): ");
         /* usamos %9s para limitar e evitar overflow */
         scanf(" %9s", territorios[i].cor);
         limpar_buffer();
@@ -54,14 +54,14 @@ int main() {
         }
         limpar_buffer();
 
-        printf("-> Território %d cadastrado com sucesso!\n", i + 1);
+        printf("-> Territorio %d cadastrado com sucesso!\n", i + 1);
     }
 
     /* Exibição organizada dos dados de todos os territórios */
-    printf("\n\nEstado atual do mapa (Todos os territórios):\n");
+    printf("\n\nEstado atual do mapa (Todos os territorios):\n");
     printf("===========================================\n");
     for (i = 0; i < 5; i++) {
-        printf("Território %d:\n", i + 1);
+        printf("Territorio %d:\n", i + 1);
         printf("  Nome : %s\n", territorios[i].nome);
         printf("  Cor  : %s\n", territorios[i].cor);
         printf("  Tropas: %d\n", territorios[i].tropas);
